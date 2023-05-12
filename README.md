@@ -1,10 +1,14 @@
-<h2 align="center">Subitizing</h2>
+<h2 align="center">Subitizing 🍂</h2>
 
 <p align="justify">
-While deep learning has enjoyed significant success in computer vision tasks over the past decade, many shortcomings still exist from a cognitive science perspective. In particular, the ability to <em>subitize</em>, quickly and accurately identify the small (≤ 6) count of an item, is not well learned by current convolutional neural networks (CNN) when using a standard cross-entropy loss. Our study demonstrates that adapting tools used in cognitive science research can improve the subitizing generalization of simple CNN. To do so we use the Holographic Reduced Representations (HRR) to implement an alternative loss function. This HRR-based loss improves - but does not solve - a CNN's ability to generalize subitizing.
+<b>Question:</b> How many stars are there? 🌟🌟🌟 How about now? 🌟🌟🌟🌟🌟🌟🌟 Certainly, we can answer the first question without explicitly counting each star, and intuitively by looking at the stars all at once we can confidently say there are 3 stars. However, answering the second question was not as much instantaneous and obvious as the first one. What we experienced is called subitizing, the ability to recognize small counts nearly instantaneously (Kaufman et al. 1949). In other words, as the number of items increases their instantaneous countability decreases. However much easy and intuitive this is to a human, recent work has demonstrated that simple CNN failed to perform subitizing. In this paper, following the footsteps of prior cognitive science (CogSci) work, we developed a loss function that improves network subitization ability not only of convolutional neural networks (CNN) but also of vision transformers (ViT).
 </p>
 
-### Requirements
+<p align="justify">
+The proposed loss function leverages a vector symbolic architecture called Holographic Reduced Representations (HRR). Although the proposed loss function is not a complete answer to the subitizing question, it does help networks to learn better generalization to subitizing compared to a regular cross-entropy (CE) loss function. Our results are intriguing in that we did not design the HRR loss to be biased toward numerosity or subitizing via symbolic manipulation, but instead defined a simple loss function as a counterpart to the CE loss that retains a classification focus. This may imply some unique benefit to the HRR operator in improving generalization and supports the years of prior work using it for CogSci research.
+</p>
+
+## Requirements
 ![requirements](https://img.shields.io/badge/Python-3.9.16-86f705.svg?longCache=true&style=flat&logo=python)
 
 <p align="justify">
@@ -17,14 +21,14 @@ pip install torch==1.13.1+cu116 torchvision==0.14.1+cu116 torchaudio==0.13.1 --e
 ```
 
 <p align="justify">
-Along with that we need the <b>hrr</b> library that implements the vector symbolic architecture called <a href=https://github.com/MahmudulAlam/Holographic-Reduced-Representations>Holographic Reduced Representations (HRR)</a> which is used to develop the hrr loss function.  
+Along with that we need the <b>hrr</b> library that implements the vector symbolic architecture called Holographic Reduced Representations (HRR) which is used to develop the hrr loss function.  
 </p>
 
 ```properties 
 pip install hrr --upgrade
 ```
 
-### Getting Started
+## Getting Started
 In this repository, CNN and ViT networks are training with both hrr and ce loss functions for subitizing tasks. The code for each of the networks are located in ```cnn/``` and ```vit/``` folders, respectively. Each of the folders contains network, train, predict, and saliency files where names are suffixed corresponding loss function name. The proposed hrr loss function requries key-value pairs per class which are generated in ```generator.py``` file. The ```dataset.py``` file contains the dataloader and ```utils.py``` has the utility files. 
 
 ### Methodology 
