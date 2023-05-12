@@ -5,8 +5,27 @@ While deep learning has enjoyed significant success in computer vision tasks ove
 </p>
 
 ### Requirements
+![requirements](https://img.shields.io/badge/Python-3.9.16-86f705.svg?longCache=true&style=flat&logo=python)
 
-- PyTorch ```conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch```
+<p align="justify">
+The code is written in <a href=https://pytorch.org>pytorch</a> which is the main dependency to run the code.
+</p>
+
+```properties 
+conda create -n <env-name> python=3.9.16
+pip install torch==1.13.1+cu116 torchvision==0.14.1+cu116 torchaudio==0.13.1 --extra-index-url https://download.pytorch.org/whl/cu116
+```
+
+<p align="justify">
+Along with that we need the <b>hrr</b> library that implements the vector symbolic architecture called <a href=https://github.com/MahmudulAlam/Holographic-Reduced-Representations>Holographic Reduced Representations (HRR)</a> which is used to develop the hrr loss function.  
+</p>
+
+```properties 
+pip install hrr --upgrade
+```
+
+### Getting Started
+In this repository, CNN and ViT networks are training with both hrr and ce loss functions for subitizing tasks. The code for each of the networks are located in ```cnn/``` and ```vit/``` folders, respectively. Each of the folders contains network, train, predict, and saliency files where names are suffixed corresponding loss function name. The proposed hrr loss function requries key-value pairs per class which are generated in ```generator.py``` file. The ```dataset.py``` file contains the dataloader and ```utils.py``` has the utility files. 
 
 ### Methodology 
 <p align="justify">
