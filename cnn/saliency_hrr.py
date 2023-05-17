@@ -50,6 +50,11 @@ for dataset_name in exp:
 
         image.requires_grad = True
         pred = model(image)
+
+        pred = torch.unsqueeze(pred, dim=1)
+        value_prime = unbinding(pred, key, dim=-1)
+        pred = cosine_similarity(value, value_prime, dim=-1)
+
         correct = torch.argmax(pred, dim=-1) == label
         correct = correct[0].detach().cpu()
 
@@ -57,10 +62,6 @@ for dataset_name in exp:
             return
         if not correct and false_counter >= 10:
             return
-
-        pred = torch.unsqueeze(pred, dim=1)
-        value_prime = unbinding(pred, key, dim=-1)
-        pred = cosine_similarity(value, value_prime, dim=-1)
 
         score, indices = torch.max(pred, 1)
         score.backward()
