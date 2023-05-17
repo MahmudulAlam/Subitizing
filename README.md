@@ -1,5 +1,5 @@
-<h2 align="center">Subitizing 🍂</h2>
-
+<h2 align="center">Subitizing</h2>
+<!-- 🍂 -->
 <p align="justify">
 <b>Question:</b> How many stars are there? 🌟🌟🌟 How about now? 🌟🌟🌟🌟🌟🌟🌟 Certainly, we can answer the first question without explicitly counting each star, and intuitively by looking at the stars all at once we can confidently say there are 3 stars. However, answering the second question was not as much instantaneous and obvious as the first one. What we experienced is called subitizing, the ability to recognize small counts nearly instantaneously (Kaufman et al. 1949). In other words, as the number of items increases their instantaneous countability decreases. However much easy and intuitive this is to a human, recent work has demonstrated that a simple convolutional neural network (CNN) failed to perform subitizing. In this work, following the footsteps of prior cognitive science (CogSci) research, we developed a loss function that improves network subitization ability not only of CNNs but also of vision transformers (ViTs).
 </p>
@@ -63,6 +63,6 @@ Moreover, based on the observation of saliency maps of correct and incorrect pre
 <li>When the HRR-based loss is incorrect, it tends to have a saliency map that is either 1) activating on the inside content of the object, or 2) has large broken/incomplete edges detected for the object.</li>
 </ul>
 
-<p align="justify">
+<!-- <p align="justify">
 <b>Bonus:</b> In the beginning, the title of the readme has a leaf emoji. Without looking at that now, how many leaves were there? 
-</p>
+</p> -->
