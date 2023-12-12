@@ -1,7 +1,7 @@
-<h2 align="center">Subitizing</h2>
+<h2 align="center">Subitizing 🍂</h2>
 <!-- 🍂 -->
 <p align="justify">
-<b>Question:</b> How many stars are there? 🌟🌟🌟 How about now? 🌟🌟🌟🌟🌟🌟🌟 Certainly, we can answer the first question without explicitly counting each star, and intuitively by looking at the stars all at once we can confidently say there are 3 stars. However, answering the second question was not as much instantaneous and obvious as the first one. What we experienced is called subitizing, the ability to recognize small counts nearly instantaneously (Kaufman et al. 1949). In other words, as the number of items increases their instantaneous countability decreases. However much easy and intuitive this is to a human, recent work has demonstrated that a simple convolutional neural network (CNN) failed to perform subitizing. In this work, following the footsteps of prior cognitive science (CogSci) research, we developed a loss function that improves network subitization ability not only of CNNs but also of vision transformers (ViTs).
+<b>Question:</b> How many stars are there? 🌟🌟🌟 How about now? 🌟🌟🌟🌟🌟🌟🌟 Certainly, we can answer the first question without explicitly counting each star, and intuitively by looking at the stars all at once we can confidently say there are 3 stars. However, answering the second question was not as much instantaneous and obvious as the first one. What we experienced is called subitizing, the ability to recognize small counts nearly instantaneously (Kaufman et al. 1949). In other words, as the number of items increases their instantaneous countability decreases. However easy and intuitive this is to a human, recent work has demonstrated that a simple convolutional neural network (CNN) failed to perform subitizing. In this work, following the footsteps of prior cognitive science (CogSci) research, we developed a loss function that improves network subitization ability not only of CNNs but also of vision transformers (ViTs).
 </p>
 
 <p align="justify">
@@ -37,7 +37,7 @@ We re-interpret the logits of CNN and ViT as an HRR vector, which we convert to 
 </p>
 
 <p align="justify">
-The networks are trained using the images of white circles on a black background. After training, during test time experiments are performed by changing the size, shape, color, and boundary representation of the object to examine subitizing generalizability of each method. The results of the four experiments for both CNN and ViT are shown in the following tables. In each of the four experiments accuracy of the models trained with <b>HRR</b> and <b>CE</b> loss is presented. The HRR-based loss appears to improve the results, especially toward higher subitizing generalization. ViT performed comparatively worse than CNN, however, in general, ViT with HRR loss shows better generalization. In one case of CNN, HRR’s performance has degraded, but still non-trivial performance, and in one case both the HRR loss and CE loss have degenerated worse-than-random guessing. In the case of ViT, HRR’s effectiveness in generalization remains consistent particularly in ‘white rings’ where it outperformed CE over a big margin ranging from 4% to 58%.
+The networks are trained using the images of white circles on a black background. After training, during test time experiments are performed by changing the size, shape, color, and boundary representation of the object to examine the subitizing generalizability of each method. The results of the four experiments for both CNN and ViT are shown in the following tables. In each of the four experiments accuracy of the models trained with <b>HRR</b> and <b>CE</b> loss is presented. The HRR-based loss appears to improve the results, especially toward higher subitizing generalization. ViT performed comparatively worse than CNN, however, in general, ViT with HRR loss shows better generalization. In one case of CNN, HRR’s performance has degraded, but still non-trivial performance, and in one case both the HRR loss and CE loss have degenerated worse-than-random guessing. In the case of ViT, HRR’s effectiveness in generalization remains consistent particularly in ‘white rings’ where it outperformed CE over a big margin ranging from 4% to 58%.
 </p>
 
 <p align="center">
@@ -57,12 +57,12 @@ Moreover, based on the observation of saliency maps of correct and incorrect pre
 
 <ul> 
 <li>Even when the CE-based model is correct, its saliency map indicates it uses the inside region of an object and the area around the object/background toward its prediction in almost all cases.</li>
-<li>When the HRR-based model is correct, the edges of the objects in the saliency map are usually nearly-complete, and large noisy activations can be observed surrounding the boundary regions.</li>
-<li>When the CE-based model is incorrect, it often has two objects that are nearby each other.</li>
+<li>When the HRR-based model is correct, the edges of the objects in the saliency map are usually nearly complete, and large noisy activations can be observed surrounding the boundary regions.</li>
+<li>When the CE-based model is incorrect, it often has two objects that are near each other.</li>
 <li>When this happens, the CE saliency map tends to produce especially large activations between the objects, creating an artificial "bridge" between the two objects.</li>
 <li>When the HRR-based loss is incorrect, it tends to have a saliency map that is either 1) activating on the inside content of the object, or 2) has large broken/incomplete edges detected for the object.</li>
 </ul>
 
-<!-- <p align="justify">
+<p align="justify">
 <b>Bonus:</b> In the beginning, the title of the readme has a leaf emoji. Without looking at that now, how many leaves were there? 
-</p> -->
+</p>
