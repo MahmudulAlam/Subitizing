@@ -5,7 +5,7 @@
 </p>
 
 <p align="justify">
-The proposed loss function leverages a vector symbolic architecture called Holographic Reduced Representations (HRR). Although the proposed loss function is not a complete answer to the subitizing question, it does help networks to learn better generalization to subitizing compared to a regular cross-entropy (CE) loss function. Our results are intriguing in that we did not design the HRR loss to be biased toward numerosity or subitizing via symbolic manipulation, but instead defined a simple loss function as a counterpart to the CE loss that retains a classification focus. This may imply some unique benefit to the HRR operator in improving generalization and supports the years of prior work using it for CogSci research.
+The proposed loss function leverages a vector symbolic architecture called <a href="https://github.com/MahmudulAlam/Holographic-Reduced-Representations">Holographic Reduced Representations (HRR)</a>. Although the proposed loss function is not a complete answer to the subitizing question, it does help networks to learn better generalization to subitizing compared to a regular cross-entropy (CE) loss function. Our results are intriguing in that we did not design the HRR loss to be biased toward numerosity or subitizing via symbolic manipulation, but instead defined a simple loss function as a counterpart to the CE loss that retains a classification focus. This may imply some unique benefit to the HRR operator in improving generalization and supports the years of prior work using it for CogSci research.
 </p>
 
 ## Requirements
@@ -21,7 +21,7 @@ pip install torch==1.13.1+cu116 torchvision==0.14.1+cu116 torchaudio==0.13.1 --e
 ```
 
 <p align="justify">
-Along with that, we need the <b>hrr</b> library that implements the vector symbolic architecture called Holographic Reduced Representations (HRR) which is used to develop the hrr loss function.  
+Along with that, we need the <a href="https://github.com/MahmudulAlam/Holographic-Reduced-Representations">hrr</a> library that implements the vector symbolic architecture called Holographic Reduced Representations (HRR) which is used to develop the hrr loss function.  
 </p>
 
 ```properties 
